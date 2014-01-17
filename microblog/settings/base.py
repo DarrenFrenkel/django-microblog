@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 #from django.contrib import staticfiles
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
-
 import dj_database_url
 # here() gives us file paths from the root of the system to the directory
 # holding the current file.
@@ -36,9 +34,7 @@ MANAGERS = ADMINS
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-DATABASES = {
-    'default': dj_database_url.config()
-}
+DATABASES['default'] =  dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
