@@ -1,2 +1,5 @@
+{% extends "_layouts/base.html" %}
 
-<h1>Hello, World</h1>
+{% block page_content%}
+<a href="{% url 'blog:list'%}">Read my blog</a>
+{% endblock %}
