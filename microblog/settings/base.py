@@ -54,11 +54,17 @@ USE_TZ = True
 MEDIA_ROOT = root("..", "uploads")
 MEDIA_URL = ''
 
-STATIC_ROOT = root("..", "static")
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS =(
-    root("..", "assets"),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 STATICFILES_FINDERS = (
@@ -93,7 +99,8 @@ TEMPLATE_DIRS =(
 
 MEDIA_ROOT = root("..", "uploads")
 
-ALLOWED_HOSTS = ['localhost']
+
+
 
 
 # Application definition
